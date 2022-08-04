@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="foodapi.Models.Goodtypetwo">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAAAAAAAAAAAAAAAAAgAAAAACgAABAAEAAAAAAE=</HashCode>
+      <FileName>Models\Goodtypetwo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="foodapi.Models.Goodtypeone">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEAAABAAA=</HashCode>
+      <FileName>Models\Goodtypeone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="foodapi.Models.Param">
+    <Position X="2" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAIAAAgAAAAAAAACCgCCADEBwAAAAE=</HashCode>
+      <FileName>Models\Param.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="foodapi.Models.Good">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBiAIARAAAAhgAAABAQAAAAAgACCAICABAgAAAAEA=</HashCode>
+      <FileName>Models\Good.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="foodapi.Models.Order">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAQCAAAEAACAAgAAEBAUAQAAABACgACAAAAAAAAAAE=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="foodapi.Controllers.FoodController">
+    <Position X="7.5" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\FoodController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

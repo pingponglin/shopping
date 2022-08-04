@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05b6e48f68f84ba2aa3dee8dae619a49" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="foodModel.Address" Width="1.5" PointX="6.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Admin" Width="1.5" PointX="3.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Collect" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.footprint" Width="1.5" PointX="3.125" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Good" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Goodkowei" Width="1.5" PointX="2.625" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Goodtypeone" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Goodtypetwo" Width="1.5" PointX="6.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Order" Width="1.5" PointX="8.125" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Ordertuihuo" Width="1.5" PointX="5.625" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Param" Width="1.5" PointX="8.125" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Score" Width="1.5" PointX="7.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.shopping" Width="1.5" PointX="4.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="foodModel.Userxix" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="foodModel.FK_Address_Userxix" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Order_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Admin_Userxix" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Collect_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Collect_Userxix" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_footprint_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_footprint_Userxix" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Goodkowei_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Goodtypetwo_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Order_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Ordertuihuo_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Param_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Score_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_shopping_Good" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_shopping_Goodkowei" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Goodtypetwo_Goodtypeone" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Order_Goodtypetwo" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Ordertuihuo_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Score_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_Score_Userxix" ManuallyRouted="false" />
+        <AssociationConnector Association="foodModel.FK_shopping_Userxix" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="foodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Addressid" />
+    </Key>
+    <Property Name="Addressid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Addressname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addresssuozaidiqu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addressxiangxidiqu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Addressyoubian" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addressphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixids" Type="Int32" />
+    <Property Name="Addressstaus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Userxix" Relationship="Self.FK_Address_Userxix" FromRole="Address" ToRole="Userxix" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Address" FromRole="Address" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Adminid" />
+    </Key>
+    <Property Name="Adminid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adminname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adminmima" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixid" Type="Int32" />
+    <NavigationProperty Name="Userxix" Relationship="Self.FK_Admin_Userxix" FromRole="Admin" ToRole="Userxix" />
+  </EntityType>
+  <EntityType Name="Collect">
+    <Key>
+      <PropertyRef Name="Collectid" />
+    </Key>
+    <Property Name="Collectid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodid" Type="Int32" Nullable="false" />
+    <Property Name="Collectdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Userxixid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Collect_Good" FromRole="Collect" ToRole="Good" />
+    <NavigationProperty Name="Userxix" Relationship="Self.FK_Collect_Userxix" FromRole="Collect" ToRole="Userxix" />
+  </EntityType>
+  <EntityType Name="footprint">
+    <Key>
+      <PropertyRef Name="footprintid" />
+    </Key>
+    <Property Name="footprintid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="footprintdate" Type="DateTime" Precision="3" />
+    <Property Name="Userxixid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_footprint_Good" FromRole="footprint" ToRole="Good" />
+    <NavigationProperty Name="Userxix" Relationship="Self.FK_footprint_Userxix" FromRole="footprint" ToRole="Userxix" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="Goodid" />
+    </Key>
+    <Property Name="Goodid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GoodName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GoodfuName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GoodPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GoodPrcieper" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Goodnum" Type="Int32" />
+    <Property Name="Goodsales" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GoodCreatedate" Type="DateTime" Precision="3" />
+    <Property Name="GoodImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Goodstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GoodImagefu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Collect" Relationship="Self.FK_Collect_Good" FromRole="Good" ToRole="Collect" />
+    <NavigationProperty Name="footprint" Relationship="Self.FK_footprint_Good" FromRole="Good" ToRole="footprint" />
+    <NavigationProperty Name="Goodkowei" Relationship="Self.FK_Goodkowei_Good" FromRole="Good" ToRole="Goodkowei" />
+    <NavigationProperty Name="Goodtypetwo" Relationship="Self.FK_Goodtypetwo_Good" FromRole="Good" ToRole="Goodtypetwo" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Good" FromRole="Good" ToRole="Order" />
+    <NavigationProperty Name="Ordertuihuo" Relationship="Self.FK_Ordertuihuo_Good" FromRole="Good" ToRole="Ordertuihuo" />
+    <NavigationProperty Name="Param" Relationship="Self.FK_Param_Good" FromRole="Good" ToRole="Param" />
+    <NavigationProperty Name="Score" Relationship="Self.FK_Score_Good" FromRole="Good" ToRole="Score" />
+    <NavigationProperty Name="shopping" Relationship="Self.FK_shopping_Good" FromRole="Good" ToRole="shopping" />
+  </EntityType>
+  <EntityType Name="Goodkowei">
+    <Key>
+      <PropertyRef Name="Goodkoweiid" />
+    </Key>
+    <Property Name="Goodkoweiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodkoweiname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="Goodkoweistatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shoppcheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Goodkowei_Good" FromRole="Goodkowei" ToRole="Good" />
+    <NavigationProperty Name="shopping" Relationship="Self.FK_shopping_Goodkowei" FromRole="Goodkowei" ToRole="shopping" />
+  </EntityType>
+  <EntityType Name="Goodtypeone">
+    <Key>
+      <PropertyRef Name="Goodtypeoneid" />
+    </Key>
+    <Property Name="Goodtypeoneid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodtypeonename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodtypestatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Goodtypetwo" Relationship="Self.FK_Goodtypetwo_Goodtypeone" FromRole="Goodtypeone" ToRole="Goodtypetwo" />
+  </EntityType>
+  <EntityType Name="Goodtypetwo">
+    <Key>
+      <PropertyRef Name="Goodtypetwoid" />
+    </Key>
+    <Property Name="Goodtypetwoid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodtypetwoname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodtypeoneid" Type="Int32" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="Goodtypetwostatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Goodtypetwo_Good" FromRole="Goodtypetwo" ToRole="Good" />
+    <NavigationProperty Name="Goodtypeone" Relationship="Self.FK_Goodtypetwo_Goodtypeone" FromRole="Goodtypetwo" ToRole="Goodtypeone" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Goodtypetwo" FromRole="Goodtypetwo" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Orderid" />
+    </Key>
+    <Property Name="Orderid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ordername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ordernum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ordersum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="Ordertime" Type="DateTime" Precision="3" />
+    <Property Name="Orderwuliu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodtypetwoid" Type="Int32" />
+    <Property Name="Orderstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Orderzt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Addressid" Type="Int32" />
+    <Property Name="Ordertixifahuo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_Order_Address" FromRole="Order" ToRole="Address" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Order_Good" FromRole="Order" ToRole="Good" />
+    <NavigationProperty Name="Goodtypetwo" Relationship="Self.FK_Order_Goodtypetwo" FromRole="Order" ToRole="Goodtypetwo" />
+    <NavigationProperty Name="Ordertuihuo" Relationship="Self.FK_Ordertuihuo_Order" FromRole="Order" ToRole="Ordertuihuo" />
+    <NavigationProperty Name="Score" Relationship="Self.FK_Score_Order" FromRole="Order" ToRole="Score" />
+  </EntityType>
+  <EntityType Name="Ordertuihuo">
+    <Key>
+      <PropertyRef Name="Ordertuihuoid" />
+    </Key>
+    <Property Name="Ordertuihuoid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodid" Type="Int32" Nullable="false" />
+    <Property Name="Ordertuihuomoneys" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ordertuihuostatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ordertuihuodate" Type="DateTime" Precision="3" />
+    <Property Name="Orderid" Type="Int32" />
+    <Property Name="Ordertuihuoyuangyi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrdertuihuoImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ordertuihuotype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ordertuihuoshuomin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Ordertuihuo_Good" FromRole="Ordertuihuo" ToRole="Good" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Ordertuihuo_Order" FromRole="Ordertuihuo" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Param">
+    <Key>
+      <PropertyRef Name="Paramid" />
+    </Key>
+    <Property Name="Paramid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParamProductionid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Parammethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paramdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paramedible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paramcontent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paramproduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Paramstandard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paramsite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="Goodimage1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Goodimage2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Goodimage3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Goodimage4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Param_Good" FromRole="Param" ToRole="Good" />
+  </EntityType>
+  <EntityType Name="Score">
+    <Key>
+      <PropertyRef Name="Scoreid" />
+    </Key>
+    <Property Name="Scoreid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scoreidpf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Scoredate" Type="DateTime" Precision="3" />
+    <Property Name="Scoreidcontent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixid" Type="Int32" Nullable="false" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="Orderid" Type="Int32" />
+    <Property Name="Scoreimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_Score_Good" FromRole="Score" ToRole="Good" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Score_Order" FromRole="Score" ToRole="Order" />
+    <NavigationProperty Name="Userxix" Relationship="Self.FK_Score_Userxix" FromRole="Score" ToRole="Userxix" />
+  </EntityType>
+  <EntityType Name="shopping">
+    <Key>
+      <PropertyRef Name="shoppingid" />
+    </Key>
+    <Property Name="shoppingid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Goodid" Type="Int32" />
+    <Property Name="shoppingnum" Type="Int32" />
+    <Property Name="shoppingdate" Type="DateTime" Precision="3" />
+    <Property Name="shoppingmoney" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixid" Type="Int32" />
+    <Property Name="shoppcheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goodkoweiid" Type="Int32" />
+    <NavigationProperty Name="Good" Relationship="Self.FK_shopping_Good" FromRole="shopping" ToRole="Good" />
+    <NavigationProperty Name="Goodkowei" Relationship="Self.FK_shopping_Goodkowei" FromRole="shopping" ToRole="Goodkowei" />
+    <NavigationProperty Name="Userxix" Relationship="Self.FK_shopping_Userxix" FromRole="shopping" ToRole="Userxix" />
+  </EntityType>
+  <EntityType Name="Userxix">
+    <Key>
+      <PropertyRef Name="Userxixid" />
+    </Key>
+    <Property Name="Userxixid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Userxixnich" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixgender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixbirthday" Type="DateTime" Precision="3" />
+    <Property Name="Userxixphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userxixemail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Usermima" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Userstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_Address_Userxix" FromRole="Userxix" ToRole="Address" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK_Admin_Userxix" FromRole="Userxix" ToRole="Admin" />
+    <NavigationProperty Name="Collect" Relationship="Self.FK_Collect_Userxix" FromRole="Userxix" ToRole="Collect" />
+    <NavigationProperty Name="footprint" Relationship="Self.FK_footprint_Userxix" FromRole="Userxix" ToRole="footprint" />
+    <NavigationProperty Name="Score" Relationship="Self.FK_Score_Userxix" FromRole="Userxix" ToRole="Score" />
+    <NavigationProperty Name="shopping" Relationship="Self.FK_shopping_Userxix" FromRole="Userxix" ToRole="shopping" />
+  </EntityType>
+  <Association Name="FK_Address_Userxix">
+    <End Role="Userxix" Type="Self.Userxix" Multiplicity="0..1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userxix">
+        <PropertyRef Name="Userxixid" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Userxixids" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Addressid" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Addressid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Admin_Userxix">
+    <End Role="Userxix" Type="Self.Userxix" Multiplicity="0..1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userxix">
+        <PropertyRef Name="Userxixid" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Userxixid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Collect_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="1" />
+    <End Role="Collect" Type="Self.Collect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Collect">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Collect_Userxix">
+    <End Role="Userxix" Type="Self.Userxix" Multiplicity="1" />
+    <End Role="Collect" Type="Self.Collect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userxix">
+        <PropertyRef Name="Userxixid" />
+      </Principal>
+      <Dependent Role="Collect">
+        <PropertyRef Name="Userxixid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_footprint_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="footprint" Type="Self.footprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="footprint">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_footprint_Userxix">
+    <End Role="Userxix" Type="Self.Userxix" Multiplicity="1" />
+    <End Role="footprint" Type="Self.footprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userxix">
+        <PropertyRef Name="Userxixid" />
+      </Principal>
+      <Dependent Role="footprint">
+        <PropertyRef Name="Userxixid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Goodkowei_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="Goodkowei" Type="Self.Goodkowei" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Goodkowei">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Goodtypetwo_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="Goodtypetwo" Type="Self.Goodtypetwo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Goodtypetwo">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordertuihuo_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="1" />
+    <End Role="Ordertuihuo" Type="Self.Ordertuihuo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Ordertuihuo">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Param_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="Param" Type="Self.Param" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Param">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Score_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="Score" Type="Self.Score" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="Score">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_shopping_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+    <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="Goodid" />
+      </Principal>
+      <Dependent Role="shopping">
+        <PropertyRef Name="Goodid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_shopping_Goodkowei">
+    <End Role="Goodkowei" Type="Self.Goodkowei" Multiplicity="0..1" />
+    <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goodkowei">
+        <PropertyRef Name="Goodkoweiid" />
+      </Principal>
+      <Dependent Role="shopping">
+        <PropertyRef Name="Goodkoweiid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Goodtypetwo_Goodtypeone">
+    <End Role="Goodtypeone" Type="Self.Goodtypeone" Multiplicity="0..1" />
+    <End Role="Goodtypetwo" Type="Self.Goodtypetwo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goodtypeone">
+        <PropertyRef Name="Goodtypeoneid" />
+      </Principal>
+      <Dependent Role="Goodtypetwo">
+        <PropertyRef Name="Goodtypeoneid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Goodtypetwo">
+    <End Role="Goodtypetwo" Type="Self.Goodtypetwo" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goodtypetwo">
+        <PropertyRef Name="Goodtypetwoid" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Goodtypetwoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ordertuihuo_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="Ordertuihuo" Type="Self.Ordertuihuo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Orderid" />
+      </Principal>
+      <Dependent Role="Ordertuihuo">
+        <PropertyRef Name="Orderid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Score_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="Score" Type="Self.Score" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Orderid" />
+      </Principal>
+      <Dependent Role="Score">
+        <PropertyRef Name="Orderid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Score_Userxix">
+    <End Role="Userxix" Type="Self.Userxix" Multiplicity="1" />
+    <End Role="Score" Type="Self.Score" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userxix">
+        <PropertyRef Name="Userxixid" />
+      </Principal>
+      <Dependent Role="Score">
+        <PropertyRef Name="Userxixid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_shopping_Userxix">
+    <End Role="Userxix" Type="Self.Userxix" Multiplicity="0..1" />
+    <End Role="shopping" Type="Self.shopping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Userxix">
+        <PropertyRef Name="Userxixid" />
+      </Principal>
+      <Dependent Role="shopping">
+        <PropertyRef Name="Userxixid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="foodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Address" EntityType="Self.Address" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="Collect" EntityType="Self.Collect" />
+    <EntitySet Name="footprint" EntityType="Self.footprint" />
+    <EntitySet Name="Good" EntityType="Self.Good" />
+    <EntitySet Name="Goodkowei" EntityType="Self.Goodkowei" />
+    <EntitySet Name="Goodtypeone" EntityType="Self.Goodtypeone" />
+    <EntitySet Name="Goodtypetwo" EntityType="Self.Goodtypetwo" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="Ordertuihuo" EntityType="Self.Ordertuihuo" />
+    <EntitySet Name="Param" EntityType="Self.Param" />
+    <EntitySet Name="Score" EntityType="Self.Score" />
+    <EntitySet Name="shopping" EntityType="Self.shopping" />
+    <EntitySet Name="Userxix" EntityType="Self.Userxix" />
+    <AssociationSet Name="FK_Address_Userxix" Association="Self.FK_Address_Userxix">
+      <End Role="Userxix" EntitySet="Userxix" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Address" Association="Self.FK_Order_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Admin_Userxix" Association="Self.FK_Admin_Userxix">
+      <End Role="Userxix" EntitySet="Userxix" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Collect_Good" Association="Self.FK_Collect_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Collect" EntitySet="Collect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Collect_Userxix" Association="Self.FK_Collect_Userxix">
+      <End Role="Userxix" EntitySet="Userxix" />
+      <End Role="Collect" EntitySet="Collect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_footprint_Good" Association="Self.FK_footprint_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="footprint" EntitySet="footprint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_footprint_Userxix" Association="Self.FK_footprint_Userxix">
+      <End Role="Userxix" EntitySet="Userxix" />
+      <End Role="footprint" EntitySet="footprint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Goodkowei_Good" Association="Self.FK_Goodkowei_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Goodkowei" EntitySet="Goodkowei" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Goodtypetwo_Good" Association="Self.FK_Goodtypetwo_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Goodtypetwo" EntitySet="Goodtypetwo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Good" Association="Self.FK_Order_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordertuihuo_Good" Association="Self.FK_Ordertuihuo_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Ordertuihuo" EntitySet="Ordertuihuo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Param_Good" Association="Self.FK_Param_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Param" EntitySet="Param" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Score_Good" Association="Self.FK_Score_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Score" EntitySet="Score" />
+    </AssociationSet>
+    <AssociationSet Name="FK_shopping_Good" Association="Self.FK_shopping_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="shopping" EntitySet="shopping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_shopping_Goodkowei" Association="Self.FK_shopping_Goodkowei">
+      <End Role="Goodkowei" EntitySet="Goodkowei" />
+      <End Role="shopping" EntitySet="shopping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Goodtypetwo_Goodtypeone" Association="Self.FK_Goodtypetwo_Goodtypeone">
+      <End Role="Goodtypeone" EntitySet="Goodtypeone" />
+      <End Role="Goodtypetwo" EntitySet="Goodtypetwo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Goodtypetwo" Association="Self.FK_Order_Goodtypetwo">
+      <End Role="Goodtypetwo" EntitySet="Goodtypetwo" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ordertuihuo_Order" Association="Self.FK_Ordertuihuo_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Ordertuihuo" EntitySet="Ordertuihuo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Score_Order" Association="Self.FK_Score_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Score" EntitySet="Score" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Score_Userxix" Association="Self.FK_Score_Userxix">
+      <End Role="Userxix" EntitySet="Userxix" />
+      <End Role="Score" EntitySet="Score" />
+    </AssociationSet>
+    <AssociationSet Name="FK_shopping_Userxix" Association="Self.FK_shopping_Userxix">
+      <End Role="Userxix" EntitySet="Userxix" />
+      <End Role="shopping" EntitySet="shopping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

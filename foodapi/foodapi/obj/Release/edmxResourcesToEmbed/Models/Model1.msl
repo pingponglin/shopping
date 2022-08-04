@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="foodModelStoreContainer" CdmEntityContainer="foodEntities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="foodModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="Addressid" ColumnName="Addressid" />
+          <ScalarProperty Name="Addressname" ColumnName="Addressname" />
+          <ScalarProperty Name="Addresssuozaidiqu" ColumnName="Addresssuozaidiqu" />
+          <ScalarProperty Name="Addressxiangxidiqu" ColumnName="Addressxiangxidiqu" />
+          <ScalarProperty Name="Addressyoubian" ColumnName="Addressyoubian" />
+          <ScalarProperty Name="Addressphone" ColumnName="Addressphone" />
+          <ScalarProperty Name="Userxixids" ColumnName="Userxixids" />
+          <ScalarProperty Name="Addressstaus" ColumnName="Addressstaus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="foodModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Adminid" ColumnName="Adminid" />
+          <ScalarProperty Name="Adminname" ColumnName="Adminname" />
+          <ScalarProperty Name="Adminmima" ColumnName="Adminmima" />
+          <ScalarProperty Name="Userxixid" ColumnName="Userxixid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Collect">
+      <EntityTypeMapping TypeName="foodModel.Collect">
+        <MappingFragment StoreEntitySet="Collect">
+          <ScalarProperty Name="Collectid" ColumnName="Collectid" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Collectdate" ColumnName="Collectdate" />
+          <ScalarProperty Name="Userxixid" ColumnName="Userxixid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="footprint">
+      <EntityTypeMapping TypeName="foodModel.footprint">
+        <MappingFragment StoreEntitySet="footprint">
+          <ScalarProperty Name="footprintid" ColumnName="footprintid" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="footprintdate" ColumnName="footprintdate" />
+          <ScalarProperty Name="Userxixid" ColumnName="Userxixid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Good">
+      <EntityTypeMapping TypeName="foodModel.Good">
+        <MappingFragment StoreEntitySet="Good">
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="GoodName" ColumnName="GoodName" />
+          <ScalarProperty Name="GoodfuName" ColumnName="GoodfuName" />
+          <ScalarProperty Name="GoodPrice" ColumnName="GoodPrice" />
+          <ScalarProperty Name="GoodPrcieper" ColumnName="GoodPrcieper" />
+          <ScalarProperty Name="Goodnum" ColumnName="Goodnum" />
+          <ScalarProperty Name="Goodsales" ColumnName="Goodsales" />
+          <ScalarProperty Name="GoodCreatedate" ColumnName="GoodCreatedate" />
+          <ScalarProperty Name="GoodImage" ColumnName="GoodImage" />
+          <ScalarProperty Name="Goodstatus" ColumnName="Goodstatus" />
+          <ScalarProperty Name="GoodImagefu" ColumnName="GoodImagefu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goodkowei">
+      <EntityTypeMapping TypeName="foodModel.Goodkowei">
+        <MappingFragment StoreEntitySet="Goodkowei">
+          <ScalarProperty Name="Goodkoweiid" ColumnName="Goodkoweiid" />
+          <ScalarProperty Name="Goodkoweiname" ColumnName="Goodkoweiname" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Goodkoweistatus" ColumnName="Goodkoweistatus" />
+          <ScalarProperty Name="shoppcheck" ColumnName="shoppcheck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goodtypeone">
+      <EntityTypeMapping TypeName="foodModel.Goodtypeone">
+        <MappingFragment StoreEntitySet="Goodtypeone">
+          <ScalarProperty Name="Goodtypeoneid" ColumnName="Goodtypeoneid" />
+          <ScalarProperty Name="Goodtypeonename" ColumnName="Goodtypeonename" />
+          <ScalarProperty Name="Goodtypestatus" ColumnName="Goodtypestatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goodtypetwo">
+      <EntityTypeMapping TypeName="foodModel.Goodtypetwo">
+        <MappingFragment StoreEntitySet="Goodtypetwo">
+          <ScalarProperty Name="Goodtypetwoid" ColumnName="Goodtypetwoid" />
+          <ScalarProperty Name="Goodtypetwoname" ColumnName="Goodtypetwoname" />
+          <ScalarProperty Name="Goodtypeoneid" ColumnName="Goodtypeoneid" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Goodtypetwostatus" ColumnName="Goodtypetwostatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="foodModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+          <ScalarProperty Name="Ordername" ColumnName="Ordername" />
+          <ScalarProperty Name="Ordernum" ColumnName="Ordernum" />
+          <ScalarProperty Name="Ordersum" ColumnName="Ordersum" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Ordertime" ColumnName="Ordertime" />
+          <ScalarProperty Name="Orderwuliu" ColumnName="Orderwuliu" />
+          <ScalarProperty Name="Goodtypetwoid" ColumnName="Goodtypetwoid" />
+          <ScalarProperty Name="Orderstatus" ColumnName="Orderstatus" />
+          <ScalarProperty Name="Orderzt" ColumnName="Orderzt" />
+          <ScalarProperty Name="Addressid" ColumnName="Addressid" />
+          <ScalarProperty Name="Ordertixifahuo" ColumnName="Ordertixifahuo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordertuihuo">
+      <EntityTypeMapping TypeName="foodModel.Ordertuihuo">
+        <MappingFragment StoreEntitySet="Ordertuihuo">
+          <ScalarProperty Name="Ordertuihuoid" ColumnName="Ordertuihuoid" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Ordertuihuomoneys" ColumnName="Ordertuihuomoneys" />
+          <ScalarProperty Name="Ordertuihuostatus" ColumnName="Ordertuihuostatus" />
+          <ScalarProperty Name="Ordertuihuodate" ColumnName="Ordertuihuodate" />
+          <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+          <ScalarProperty Name="Ordertuihuoyuangyi" ColumnName="Ordertuihuoyuangyi" />
+          <ScalarProperty Name="OrdertuihuoImage" ColumnName="OrdertuihuoImage" />
+          <ScalarProperty Name="Ordertuihuotype" ColumnName="Ordertuihuotype" />
+          <ScalarProperty Name="Ordertuihuoshuomin" ColumnName="Ordertuihuoshuomin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Param">
+      <EntityTypeMapping TypeName="foodModel.Param">
+        <MappingFragment StoreEntitySet="Param">
+          <ScalarProperty Name="Paramid" ColumnName="Paramid" />
+          <ScalarProperty Name="ParamProductionid" ColumnName="ParamProductionid" />
+          <ScalarProperty Name="Parammethod" ColumnName="Parammethod" />
+          <ScalarProperty Name="Paramdate" ColumnName="Paramdate" />
+          <ScalarProperty Name="Paramedible" ColumnName="Paramedible" />
+          <ScalarProperty Name="Paramcontent" ColumnName="Paramcontent" />
+          <ScalarProperty Name="Paramproduct" ColumnName="Paramproduct" />
+          <ScalarProperty Name="Paramstandard" ColumnName="Paramstandard" />
+          <ScalarProperty Name="Paramsite" ColumnName="Paramsite" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Goodimage1" ColumnName="Goodimage1" />
+          <ScalarProperty Name="Goodimage2" ColumnName="Goodimage2" />
+          <ScalarProperty Name="Goodimage3" ColumnName="Goodimage3" />
+          <ScalarProperty Name="Goodimage4" ColumnName="Goodimage4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Score">
+      <EntityTypeMapping TypeName="foodModel.Score">
+        <MappingFragment StoreEntitySet="Score">
+          <ScalarProperty Name="Scoreid" ColumnName="Scoreid" />
+          <ScalarProperty Name="Scoreidpf" ColumnName="Scoreidpf" />
+          <ScalarProperty Name="Scoredate" ColumnName="Scoredate" />
+          <ScalarProperty Name="Scoreidcontent" ColumnName="Scoreidcontent" />
+          <ScalarProperty Name="Userxixid" ColumnName="Userxixid" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+          <ScalarProperty Name="Scoreimage" ColumnName="Scoreimage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shopping">
+      <EntityTypeMapping TypeName="foodModel.shopping">
+        <MappingFragment StoreEntitySet="shopping">
+          <ScalarProperty Name="shoppingid" ColumnName="shoppingid" />
+          <ScalarProperty Name="Goodid" ColumnName="Goodid" />
+          <ScalarProperty Name="shoppingnum" ColumnName="shoppingnum" />
+          <ScalarProperty Name="shoppingdate" ColumnName="shoppingdate" />
+          <ScalarProperty Name="shoppingmoney" ColumnName="shoppingmoney" />
+          <ScalarProperty Name="Userxixid" ColumnName="Userxixid" />
+          <ScalarProperty Name="shoppcheck" ColumnName="shoppcheck" />
+          <ScalarProperty Name="Goodkoweiid" ColumnName="Goodkoweiid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userxix">
+      <EntityTypeMapping TypeName="foodModel.Userxix">
+        <MappingFragment StoreEntitySet="Userxix">
+          <ScalarProperty Name="Userxixid" ColumnName="Userxixid" />
+          <ScalarProperty Name="Userxixnich" ColumnName="Userxixnich" />
+          <ScalarProperty Name="Userxixname" ColumnName="Userxixname" />
+          <ScalarProperty Name="Userxixgender" ColumnName="Userxixgender" />
+          <ScalarProperty Name="Userxixbirthday" ColumnName="Userxixbirthday" />
+          <ScalarProperty Name="Userxixphone" ColumnName="Userxixphone" />
+          <ScalarProperty Name="Userxixemail" ColumnName="Userxixemail" />
+          <ScalarProperty Name="Usermima" ColumnName="Usermima" />
+          <ScalarProperty Name="Userstatus" ColumnName="Userstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

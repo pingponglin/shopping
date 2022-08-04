@@ -1,0 +1,78 @@
+{
+  "name": "food",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "-": "0.0.1",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "echarts": "^4.9.0",
+    "element-ui": "^2.15.1",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.6.0",
+    "node-sass": "^6.0.0",
+    "qrcodejs2": "0.0.2",
+    "qs": "^6.10.1",
+    "sass-loader": "^11.1.1",
+    "tinymce": "^5.8.2",
+    "v-charts": "^1.19.0",
+    "v-echarts": "^1.0.2",
+    "vue": "^2.6.11",
+    "vue-piczoom": "^1.0.6",
+    "vue-qr": "^2.5.0",
+    "vue-qrcode-reader": "^3.0.3",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.2.0",
+    "vue-session": "^1.0.0",
+    "weixin-js-sdk": "^1.6.0",
+    "xlsx": "^0.17.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11",
+    "vue-wxlogin": "^1.0.4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "generator-star-spacing": "off",
+      "no-tabs": "off",
+      "no-unused-vars": "off",
+      "no-console": "off",
+      "no-irregular-whitespace": "off",
+      "no-debugger": "off",
+      "vue/no-unused-vars": "off"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
